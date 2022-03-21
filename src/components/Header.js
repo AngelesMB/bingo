@@ -1,10 +1,11 @@
+import "../styles/Header.scss";
 import PlayButton from "./PlayButton";
 
-const Header = () => {
+const Header = ({ getPlayedNumber }) => {
   return (
-    <header>
-      Header
-      <PlayButton></PlayButton>
+    <header className="header">
+      <h1>Let's play bingo!</h1>
+      <PlayButton getPlayedNumber={getPlayedNumber}></PlayButton>
     </header>
   );
 };
