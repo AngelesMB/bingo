@@ -1,5 +1,4 @@
 import "../styles/PlayedNumbers.scss";
-
 import NumberItem from "./NumberItem";
 
 const PlayedNumbers = ({ playedNumbers }) => {

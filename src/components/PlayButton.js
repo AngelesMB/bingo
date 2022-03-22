@@ -1,13 +1,16 @@
 import "../styles/PlayButton.scss";
 
-const PlayButton = ({ getPlayedNumber }) => {
+const PlayButton = ({ getPlayedNumber, gameOver }) => {
   const handlePlayClick = () => {
     return getPlayedNumber();
   };
   return (
-    <div className="button" onClick={handlePlayClick}>
+    <button
+      className={`button ${gameOver ? "hidden" : null}`}
+      onClick={handlePlayClick}
+    >
       Call a number
-    </div>
+    </button>
   );
 };
 export default PlayButton;

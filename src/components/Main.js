@@ -3,12 +3,12 @@ import PlayedNumbers from "./PlayedNumbers";
 import MyNumbers from "./MyNumbers";
 import Result from "./Result";
 
-const Main = ({playedNumbers, myNumbers}) => {
+const Main = ({ message, playedNumbers, myNumbers, matches }) => {
   return (
     <main>
+      <Result message={message}></Result>
       <PlayedNumbers playedNumbers={playedNumbers}></PlayedNumbers>
-      <MyNumbers myNumbers={myNumbers}></MyNumbers>
-      <Result></Result>
+      <MyNumbers myNumbers={myNumbers} matches={matches}></MyNumbers>
     </main>
   );
 };

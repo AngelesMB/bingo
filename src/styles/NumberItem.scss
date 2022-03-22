@@ -1,13 +1,17 @@
-.number{
-    background-color: white;
-    width: 90px;
-    height: 90px;
-    color: rgb(204, 76, 97);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    font-size: 32px;
-    font-weight: 800;
+.number {
+  background-color: white;
+  width: 90px;
+  height: 90px;
+  color: rgb(6, 105, 122);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  font-size: 32px;
+  font-weight: 800;
+}
+.called {
+  background-color: rgb(6, 105, 122);
+  color: white;
 }

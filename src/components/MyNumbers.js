@@ -1,9 +1,9 @@
 import "../styles/MyNumbers.scss";
 import NumberItem from "./NumberItem";
 
-const MyNumbers = ({ myNumbers }) => {
+const MyNumbers = ({ myNumbers, matches }) => {
   const myNumbersHtml = myNumbers.map((eachNumber, index) => {
-    return <NumberItem number={eachNumber} key={index}></NumberItem>;
+    return <NumberItem matches={matches} number={eachNumber} key={index}></NumberItem>;
   });
   return (
     <div className="list__container">
