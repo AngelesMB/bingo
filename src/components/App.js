@@ -7,7 +7,7 @@ function App() {
   const getRandomNumbers = () => {
     const randomNumbers = [];
     while (randomNumbers.length < 12) {
-      const randomNumber = Math.floor(Math.random() * 101);
+      const randomNumber = Math.ceil(Math.random() * 15);
       if (randomNumbers.indexOf(randomNumber) === -1) {
         randomNumbers.push(randomNumber);
       }
@@ -21,31 +21,26 @@ function App() {
   const [message, setMessage] = useState(
     "Waiting for you to click the button!"
   );
-  const [counter, setCounter] = useState(4);
-  const [matches, setMatches] = useState([])
-
-  // const possibleNumbers = [];
-
-  // const getPossibleNumbers = () => {
-  //   for (let i = 0; i <= 100; i++) {
-  //     possibleNumbers.push(i);
-  //   }
-  //   return possibleNumbers;
-  // };
-  // getPossibleNumbers();
-
-  // setMessage("Time to yell Bingo!")
+  const [counter, setCounter] = useState(17);
+  const [matches, setMatches] = useState([]);
 
   const getPlayedNumber = () => {
     if (counter > 0) {
-      const randomNumber = Math.floor(Math.random() * 101);
-      // const calledNumber = possibleNumbers.splice(randomNumber, 1);
-      if (playedNumbers.indexOf(randomNumber) === -1) {
-        setPlayedNumbers([...playedNumbers, randomNumber]);
-        setCounter(counter - 1);
-        setMessage(`${counter} balls left`);
-        if (myNumbers.includes(randomNumber)) {
-          setMatches(...matches, randomNumber);
+      if (matches.length < 12) {
+        const randomNumber = Math.ceil(Math.random() * 15);
+        if (playedNumbers.indexOf(randomNumber) === -1) {
+          setPlayedNumbers([...playedNumbers, randomNumber]);
+          setCounter(counter - 1);
+          setMessage(`${counter} balls left`);
+          if (myNumbers.includes(randomNumber)) {
+            setMatches([...matches, randomNumber]);
+            if (matches.length === 11) {
+              setGameOver(true);
+              setMessage("You won! Time to yell Bingo!");
+            }
+          }
+        } else {
+          getPlayedNumber();
         }
       }
     } else {
@@ -55,11 +50,12 @@ function App() {
   };
 
   const resetGame = () => {
-    setCounter(4);
+    setCounter(17);
     setGameOver(false);
     setMessage("Waiting for you to click the button!");
     setPlayedNumbers([]);
     setMyNumbers(getRandomNumbers());
+    setMatches([]);
   };
 
   return (

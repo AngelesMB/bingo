@@ -1,4 +1,3 @@
-import "../styles/Main.scss";
 import PlayedNumbers from "./PlayedNumbers";
 import MyNumbers from "./MyNumbers";
 import Result from "./Result";

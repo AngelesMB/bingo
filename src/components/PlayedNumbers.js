@@ -1,9 +1,11 @@
 import "../styles/PlayedNumbers.scss";
-import NumberItem from "./NumberItem";
+import CalledNumberItem from "./CalledNumberItem";
 
 const PlayedNumbers = ({ playedNumbers }) => {
   const playedNumbersHtml = playedNumbers.map((eachNumber, index) => {
-    return <NumberItem number={eachNumber} key={index}></NumberItem>;
+    return (
+      <CalledNumberItem number={eachNumber} key={index}></CalledNumberItem>
+    );
   });
   return (
     <div className="list__container">
